@@ -1181,17 +1181,27 @@ class AbstractOption(models.Model):
     for a particular item.  Instead, option need to be specified by a customer
     when they add the item to their basket.
     """
+
+    # Option types
+    TEXT = "text"
+    INTEGER = "integer"
+    BOOLEAN = "boolean"
+    FLOAT = "float"
+    DATE = "date"
+
+    TYPE_CHOICES = (
+        (TEXT, _("Text")),
+        (INTEGER, _("Integer")),
+        (BOOLEAN, _("True / False")),
+        (FLOAT, _("Float")),
+        (DATE, _("Date")),
+    )
+
     name = models.CharField(_("Name"), max_length=128)
     code = AutoSlugField(_("Code"), max_length=128, unique=True,
                          populate_from='name')
-
-    REQUIRED, OPTIONAL = ('Required', 'Optional')
-    TYPE_CHOICES = (
-        (REQUIRED, _("Required - a value for this option must be specified")),
-        (OPTIONAL, _("Optional - a value for this option can be omitted")),
-    )
-    type = models.CharField(_("Status"), max_length=128, default=REQUIRED,
-                            choices=TYPE_CHOICES)
+    type = models.CharField(_("Type"), max_length=255, default=TEXT, choices=TYPE_CHOICES)
+    required = models.BooleanField(_("Is option required?"), default=False)
 
     class Meta:
         abstract = True
@@ -1204,7 +1214,10 @@ class AbstractOption(models.Model):
 
     @property
     def is_required(self):
-        return self.type == self.REQUIRED
+        """
+        Backward compatibility will be deprecated
+        """
+        return self.required
 
 
 class MissingProductImage(object):
