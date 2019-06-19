@@ -9,6 +9,7 @@ from oscar.forms import widgets
 
 Line = get_model('basket', 'line')
 Basket = get_model('basket', 'basket')
+Option = get_model('catalogue', 'option')
 Product = get_model('catalogue', 'product')
 
 
@@ -149,11 +150,11 @@ class BasketVoucherForm(forms.Form):
 class AddToBasketForm(forms.Form):
 
     OPTION_FIELD_FACTORIES = {
-        "text": _option_text_field,
-        "integer": _option_integer_field,
-        "boolean": _option_boolean_field,
-        "float": _option_float_field,
-        "date": _option_date_field,
+        Option.TEXT: _option_text_field,
+        Option.INTEGER: _option_integer_field,
+        Option.BOOLEAN: _option_boolean_field,
+        Option.FLOAT: _option_float_field,
+        Option.DATE: _option_date_field,
     }
 
     quantity = forms.IntegerField(initial=1, min_value=1, label=_('Quantity'))

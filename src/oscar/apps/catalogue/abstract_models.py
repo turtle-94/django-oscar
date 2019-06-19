@@ -1185,8 +1185,8 @@ class AbstractOption(models.Model):
     # Option types
     TEXT = "text"
     INTEGER = "integer"
-    BOOLEAN = "boolean"
     FLOAT = "float"
+    BOOLEAN = "boolean"
     DATE = "date"
 
     TYPE_CHOICES = (
