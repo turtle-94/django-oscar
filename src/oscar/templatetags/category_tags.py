@@ -93,7 +93,7 @@ def get_annotated_list(depth=None, parent=None):
     if max_depth is not None:
         categories = categories.filter(depth__lte=max_depth)
 
-    categories = categories.public()
+    categories = categories.browsable()
 
     info = CheapCategoryInfo(parent, url="")
 
