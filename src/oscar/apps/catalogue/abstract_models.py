@@ -78,7 +78,10 @@ class AbstractProductClass(models.Model):
 
 
 class CategoryQuerySet(MP_NodeQuerySet):
-    def public(self):
+    def browsable(self):
+        """
+        Excludes non-public categories
+        """
         return self.filter(is_public=True)
 
 
