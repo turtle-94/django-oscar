@@ -7,8 +7,6 @@ from decimal import ROUND_DOWN
 from django.conf import settings
 from django.core import exceptions
 from django.db import models
-from django.db.models.lookups import StartsWith
-from django.db.models.fields import Field
 from django.db.models.query import Q
 from django.db.models import OuterRef, Exists
 from django.template.defaultfilters import date as date_filter

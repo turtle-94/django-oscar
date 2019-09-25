@@ -11,7 +11,9 @@ from django.core.exceptions import ImproperlyConfigured, ValidationError
 from django.core.files.base import File
 from django.core.validators import RegexValidator
 from django.db import models
-from django.db.models import Count, Sum
+from django.db.models import Count, Sum, OuterRef, Exists
+from django.db.models.fields import Field
+from django.db.models.lookups import StartsWith
 from django.urls import reverse
 from django.utils.functional import cached_property
 from django.utils.html import strip_tags
@@ -118,14 +120,15 @@ class CategoryQuerySet(MP_NodeQuerySet):
         Excludes non-public categories
         """
         # build query to select all category subtrees.
-        included_in_non_public_subtree = self.filter(
-            is_public=False, path__rstartswith=OuterRef("path"), depth__lte=OuterRef("depth")
+        qs = self.filter(is_public=False)
+        included_in_non_public_subtree = qs.filter(
+            path__rstartswith=OuterRef("path"), depth__lte=OuterRef("depth")
         )
         non_public_categories = self.annotate(
             is_included_in_subtree=Exists(included_in_non_public_subtree.values("id"))
         ).filter(is_included_in_subtree=True)
-        
-        return self.difference(non_public_categories)
+        print(non_public_categories.query)
+        return self.exclude(id__in=non_public_categories)
 
 
 class CategoryObjectManager(models.Manager):
