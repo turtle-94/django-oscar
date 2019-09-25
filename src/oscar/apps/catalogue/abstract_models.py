@@ -32,6 +32,41 @@ ProductAttributesContainer = get_class(
     'catalogue.product_attributes', 'ProductAttributesContainer')
 
 
+class ReverseStartsWith(StartsWith):
+    """
+    Adds a new lookup method to the django query language, that allows the
+    following syntax::
+
+        henk__rstartswith="koe"
+
+    The regular version of startswith::
+
+        henk__startswith="koe"
+
+     Would be about the same as the python statement::
+
+        henk.startswith("koe")
+
+    ReverseStartsWith will flip the right and left hand side of the expression,
+    effectively making this the same query as::
+
+    "koe".startswith(henk)
+
+    This is used by the range query below, where we need to flip select children
+    based on that their depth starts with the depth string of the parent.
+    """
+    def process_rhs(self, compiler, connection):
+        return super().process_lhs(compiler, connection)
+
+    def process_lhs(self, compiler, connection, lhs=None):
+        if lhs is not None:
+            raise Exception("Flipped process_lhs does not accept lhs argument")
+        return super().process_rhs(compiler, connection)
+
+
+Field.register_lookup(ReverseStartsWith, "rstartswith")
+
+
 class AbstractProductClass(models.Model):
     """
     Used for defining options and attributes for a subset of products.
@@ -82,7 +117,15 @@ class CategoryQuerySet(MP_NodeQuerySet):
         """
         Excludes non-public categories
         """
-        return self.filter(is_public=True)
+        # build query to select all category subtrees.
+        included_in_non_public_subtree = self.filter(
+            is_public=False, path__rstartswith=OuterRef("path"), depth__lte=OuterRef("depth")
+        )
+        non_public_categories = self.annotate(
+            is_included_in_subtree=Exists(included_in_non_public_subtree.values("id"))
+        ).filter(is_included_in_subtree=True)
+        
+        return self.difference(non_public_categories)
 
 
 class CategoryObjectManager(models.Manager):
