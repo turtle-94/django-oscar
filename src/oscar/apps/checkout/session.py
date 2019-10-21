@@ -272,8 +272,8 @@ class CheckoutSessionMixin(object):
         shipping_method = self.get_shipping_method(
             basket, shipping_address)
         surchargerepository = SurchargeRepository()
-        surcharge = surchargerepository.get_surcharges_total(basket=basket)
-        surcharges = surchargerepository.get_surcharges_with_prices(self.request.basket)
+        surcharge = surchargerepository.get_surcharges_total(basket=basket, shipping_address)
+        surcharges = surchargerepository.get_surcharges_with_prices(self.request.basket, shipping_address)
         billing_address = self.get_billing_address(shipping_address)
         if not shipping_method:
             total = shipping_charge = None

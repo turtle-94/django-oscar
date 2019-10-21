@@ -14,6 +14,12 @@ class SurchargeRepository(object):
     def get_surcharges(self, basket, shipping_addr=None, **kwargs):
         return self.methods
 
+    def get_applicable_surcharges(self, basket, shipping_addr=None, **kwargs):
+        return [{
+            "method": method,
+            "price": method.calculate(basket)
+        } for method in self.get_surcharges(basket, shipping_addr) if self.is_applicable(basket, shipping_addr)]
+
     def get_surcharges_with_prices(self, basket, shipping_addr=None, **kwargs):
         methods = self.get_surcharges(basket, shipping_addr)
         return [{
@@ -21,7 +27,13 @@ class SurchargeRepository(object):
             "price": method.calculate(basket)
         } for method in methods]
 
-    def get_surcharges_total(self, basket, **kwargs):
+    def is_applicable(self, surcharge, basket, shipping_addr=None, **kwargs):
+        """
+        Checks if surcharge is applicable based on basket and/or shipping address
+        """
+        return True
+
+    def get_surcharges_total(self, basket, shipping_addr=None, **kwargs):
         total_surcharge = prices.Price(
             currency=basket.currency,
             excl_tax=D('0.00'), tax=D('0.00'))
