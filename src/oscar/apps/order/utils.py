@@ -36,7 +36,7 @@ class OrderCreator(object):
     """
 
     def place_order(self, basket, total,  # noqa (too complex (12))
-                    shipping_method, shipping_charge, user=None,
+                    shipping_method, shipping_charge, surcharge, user=None,
                     shipping_address=None, billing_address=None,
                     order_number=None, status=None, request=None, **kwargs):
         """
@@ -59,7 +59,7 @@ class OrderCreator(object):
 
             # Ok - everything seems to be in order, let's place the order
             order = self.create_order_model(
-                user, basket, shipping_address, shipping_method, shipping_charge,
+                user, basket, shipping_address, shipping_method, shipping_charge, surcharge,
                 billing_address, total, order_number, status, request, **kwargs)
             for line in basket.all_lines():
                 self.create_line_models(order, line)
@@ -99,9 +99,10 @@ class OrderCreator(object):
         return order
 
     def create_order_model(self, user, basket, shipping_address,
-                           shipping_method, shipping_charge, billing_address,
+                           shipping_method, shipping_charge, surcharge, billing_address,
                            total, order_number, status, request=None, **extra_order_fields):
         """Create an order model."""
+        print(shipping_method)
         order_data = {'basket': basket,
                       'number': order_number,
                       'currency': total.currency,
@@ -110,7 +111,9 @@ class OrderCreator(object):
                       'shipping_incl_tax': shipping_charge.incl_tax,
                       'shipping_excl_tax': shipping_charge.excl_tax,
                       'shipping_method': shipping_method.name,
-                      'shipping_code': shipping_method.code}
+                      'shipping_code': shipping_method.code,
+                      'surcharge_incl_tax': surcharge.incl_tax,
+                      'surcharge_excl_tax': surcharge.excl_tax}
         if shipping_address:
             order_data['shipping_address'] = shipping_address
         if billing_address:

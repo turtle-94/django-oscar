@@ -12,6 +12,7 @@ from oscar.core.loading import get_class, get_model
 from . import exceptions
 
 Repository = get_class('shipping.repository', 'Repository')
+SurchargeRepository = get_class("checkout.repository", "SurchargeRepository")
 OrderTotalCalculator = get_class(
     'checkout.calculators', 'OrderTotalCalculator')
 CheckoutSessionData = get_class(
@@ -228,6 +229,7 @@ class CheckoutSessionMixin(object):
         shipping_address = self.get_shipping_address(request.basket)
         shipping_method = self.get_shipping_method(
             request.basket, shipping_address)
+        surcharge = SurchargeRepository().get_surcharges_total(basket=request.basket)
         if shipping_method:
             shipping_charge = shipping_method.calculate(request.basket)
         else:
@@ -238,7 +240,7 @@ class CheckoutSessionMixin(object):
                 currency=request.basket.currency, excl_tax=D('0.00'),
                 tax=D('0.00')
             )
-        total = self.get_order_totals(request.basket, shipping_charge)
+        total = self.get_order_totals(request.basket, shipping_charge, surcharge)
         if total.excl_tax == D('0.00'):
             raise exceptions.PassedSkipCondition(
                 url=reverse('checkout:preview')
@@ -269,19 +271,24 @@ class CheckoutSessionMixin(object):
         shipping_address = self.get_shipping_address(basket)
         shipping_method = self.get_shipping_method(
             basket, shipping_address)
+        surchargerepository = SurchargeRepository()
+        surcharge = surchargerepository.get_surcharges_total(basket=basket)
+        surcharges = surchargerepository.get_surcharges_with_prices(self.request.basket)
         billing_address = self.get_billing_address(shipping_address)
         if not shipping_method:
             total = shipping_charge = None
         else:
             shipping_charge = shipping_method.calculate(basket)
             total = self.get_order_totals(
-                basket, shipping_charge=shipping_charge, **kwargs)
+                basket, shipping_charge=shipping_charge, surcharge=surcharge, **kwargs)
         submission = {
             'user': self.request.user,
             'basket': basket,
             'shipping_address': shipping_address,
             'shipping_method': shipping_method,
             'shipping_charge': shipping_charge,
+            'surcharge': surcharge,
+            'surcharges': surcharges,
             'billing_address': billing_address,
             'order_total': total,
             'order_kwargs': {},
@@ -408,9 +415,9 @@ class CheckoutSessionMixin(object):
                 user_address.populate_alternative_model(billing_address)
                 return billing_address
 
-    def get_order_totals(self, basket, shipping_charge, **kwargs):
+    def get_order_totals(self, basket, shipping_charge, surcharge, **kwargs):
         """
         Returns the total for the order with and without tax
         """
         return OrderTotalCalculator(self.request).calculate(
-            basket, shipping_charge, **kwargs)
+            basket, shipping_charge, surcharge, **kwargs)

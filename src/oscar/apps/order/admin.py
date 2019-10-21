@@ -29,7 +29,7 @@ class OrderAdmin(admin.ModelAdmin):
     list_display = ('number', 'total_incl_tax', 'site', 'user',
                     'billing_address', 'date_placed')
     readonly_fields = ('number', 'total_incl_tax', 'total_excl_tax',
-                       'shipping_incl_tax', 'shipping_excl_tax')
+                       'shipping_incl_tax', 'shipping_excl_tax', "surcharge_incl_tax", "surcharge_excl_tax")
     inlines = [LineInline]
 
 

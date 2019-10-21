@@ -98,7 +98,7 @@ class OrderPlacementMixin(CheckoutSessionMixin):
 
     def handle_order_placement(self, order_number, user, basket,
                                shipping_address, shipping_method,
-                               shipping_charge, billing_address, order_total,
+                               shipping_charge, surcharge, billing_address, order_total,
                                **kwargs):
         """
         Write out the order models and return the appropriate HTTP response
@@ -110,13 +110,13 @@ class OrderPlacementMixin(CheckoutSessionMixin):
         order = self.place_order(
             order_number=order_number, user=user, basket=basket,
             shipping_address=shipping_address, shipping_method=shipping_method,
-            shipping_charge=shipping_charge, order_total=order_total,
+            shipping_charge=shipping_charge, surcharge=surcharge, order_total=order_total,
             billing_address=billing_address, **kwargs)
         basket.submit()
         return self.handle_successful_order(order)
 
     def place_order(self, order_number, user, basket, shipping_address,
-                    shipping_method, shipping_charge, order_total,
+                    shipping_method, shipping_charge, surcharge, order_total,
                     billing_address=None, **kwargs):
         """
         Writes the order out to the DB including the payment models
@@ -147,6 +147,7 @@ class OrderPlacementMixin(CheckoutSessionMixin):
             shipping_address=shipping_address,
             shipping_method=shipping_method,
             shipping_charge=shipping_charge,
+            surcharge=surcharge,
             total=order_total,
             billing_address=billing_address,
             status=status,

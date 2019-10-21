@@ -73,6 +73,13 @@ class AbstractOrder(models.Model):
         _("Shipping charge (excl. tax)"), decimal_places=2, max_digits=12,
         default=0)
 
+    surcharge_incl_tax = models.DecimalField(
+        _("Surcharge (inc. tax)"), decimal_places=2, max_digits=12,
+        default=0)
+    surcharge_excl_tax = models.DecimalField(
+        _("Surcharge (excl. tax)"), decimal_places=2, max_digits=12,
+        default=0)
+
     # Not all lines are actually shipped (such as downloads), hence shipping
     # address is not mandatory.
     shipping_address = models.ForeignKey(
