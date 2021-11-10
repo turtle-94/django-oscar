@@ -31,7 +31,7 @@ msgstr ""
 "Project-Id-Version: django-oscar\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-01-27 09:56+0300\n"
-"PO-Revision-Date: 2020-12-11 10:39+0000\n"
+"PO-Revision-Date: 2021-11-10 13:41+0100\n"
 "Last-Translator: Samir Shah <solaris.smoke@gmail.com>\n"
 "Language-Team: Dutch (http://www.transifex.com/codeinthehole/django-oscar/"
 "language/nl/)\n"
@@ -40,6 +40,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0\n"
 
 #: apps/address/abstract_models.py:24
 msgid "Mr"
@@ -959,11 +960,11 @@ msgstr "Beschrijving"
 
 #: apps/catalogue/abstract_models.py:132 apps/catalogue/abstract_models.py:381
 msgid "Meta title"
-msgstr ""
+msgstr "Meta titel"
 
 #: apps/catalogue/abstract_models.py:133 apps/catalogue/abstract_models.py:382
 msgid "Meta description"
-msgstr ""
+msgstr "Meta omschrijving"
 
 #: apps/catalogue/abstract_models.py:134 apps/catalogue/abstract_models.py:852
 #: apps/dashboard/catalogue/tables.py:22
@@ -1196,12 +1197,12 @@ msgstr ""
 #: apps/catalogue/abstract_models.py:632
 msgctxt "Product meta title"
 msgid "Meta title"
-msgstr ""
+msgstr "Meta titel"
 
 #: apps/catalogue/abstract_models.py:639
 msgctxt "Product meta description"
 msgid "Meta description"
-msgstr ""
+msgstr "Meta omschrijving"
 
 #: apps/catalogue/abstract_models.py:784
 msgid "Primary product"
@@ -1432,7 +1433,7 @@ msgstr "Attribuut opties"
 
 #: apps/catalogue/abstract_models.py:1243
 msgid "Is this option required?"
-msgstr ""
+msgstr "Is deze optie vereist?"
 
 #: apps/catalogue/abstract_models.py:1312
 msgid "Original"
@@ -1739,6 +1740,8 @@ msgid ""
 "A problem occurred while placing this order. Please contact customer "
 "services."
 msgstr ""
+"Er is een probleem opgetreden tijdens het plaatsen van deze bestelling. Neem "
+"contact op met de klantenservice."
 
 #: apps/communication/abstract_models.py:24
 msgid "Email Address"
@@ -2402,7 +2405,7 @@ msgstr "Dashboard"
 
 #: apps/dashboard/catalogue/forms.py:53
 msgid "Leave blank to generate from category name"
-msgstr ""
+msgstr "Laat leeg om de naam te baseren op de naam van de categorie"
 
 #: apps/dashboard/catalogue/forms.py:62
 msgid "Create a new product of type"
@@ -2418,17 +2421,15 @@ msgstr "Product titel"
 
 #: apps/dashboard/catalogue/forms.py:240
 msgid "Leave blank to generate from product title"
-msgstr ""
+msgstr "Laat leeg om de naam te baseren op de product titel"
 
 #: apps/dashboard/catalogue/forms.py:385
 msgid "Select an option group"
 msgstr "Selecteer een optie groep"
 
 #: apps/dashboard/catalogue/forms.py:404
-#, fuzzy
-#| msgid "A range is required"
 msgid "An option group is required"
-msgstr "Een reeks is vereist"
+msgstr "Een optiegroep is vereist"
 
 #: apps/dashboard/catalogue/formsets.py:96
 msgid ""
@@ -2655,52 +2656,53 @@ msgstr "Attribuut optiegroep successvol bijgewerkt"
 #: apps/dashboard/catalogue/views.py:907
 #, python-format
 msgid "Delete Attribute Option Group '%s'"
-msgstr ""
+msgstr "Attribuut Optiegroep '%s' verwijderen"
 
 #: apps/dashboard/catalogue/views.py:914
 #, python-format
 msgid "%i product attributes are still assigned to this attribute option group"
 msgstr ""
+"%i productattributen zijn nog steeds toegewezen aan deze attribuutoptiegroep"
 
 #: apps/dashboard/catalogue/views.py:933
 msgid "Attribute Option Group deleted successfully"
-msgstr ""
+msgstr "Attribuut Optiegroep succesvol verwijderd"
 
 #: apps/dashboard/catalogue/views.py:980
 msgid "Add a new Option"
-msgstr ""
+msgstr "Een nieuwe optie toevoegen"
 
 #: apps/dashboard/catalogue/views.py:983
 msgid "Option created successfully"
-msgstr ""
+msgstr "Optie succesvol gemaakt"
 
 #: apps/dashboard/catalogue/views.py:996
 #, python-format
 msgid "Update Option '%s'"
-msgstr ""
+msgstr "Update Optie '%s'"
 
 #: apps/dashboard/catalogue/views.py:999
 msgid "Option updated successfully"
-msgstr ""
+msgstr "Optie succesvol bijgewerkt"
 
 #: apps/dashboard/catalogue/views.py:1011
 #, python-format
 msgid "Delete Option '%s'"
-msgstr ""
+msgstr "Optie '%s' verwijderen"
 
 #: apps/dashboard/catalogue/views.py:1021
 #, python-format
 msgid "%i products are still assigned to this option"
-msgstr ""
+msgstr "%i producten zijn nog steeds toegewezen aan deze optie"
 
 #: apps/dashboard/catalogue/views.py:1026
 #, python-format
 msgid "%i product classes are still assigned to this option"
-msgstr ""
+msgstr "%i producttypes zijn nog steeds toegewezen aan deze optie"
 
 #: apps/dashboard/catalogue/views.py:1032
 msgid "Option deleted successfully"
-msgstr ""
+msgstr "Optie met succes verwijderd"
 
 #: apps/dashboard/communications/apps.py:11
 msgid "Communications dashboard"
@@ -2766,7 +2768,7 @@ msgstr "Einddatum dient recenter te zijn dan startdatum"
 
 #: apps/dashboard/offers/forms.py:51
 msgid "Exclusive offers cannot be combined"
-msgstr ""
+msgstr "Exclusieve aanbiedingen kunnen niet worden gecombineerd"
 
 #: apps/dashboard/offers/forms.py:81
 msgid "Custom condition"
@@ -3229,6 +3231,8 @@ msgid ""
 "This value must contain only letters, numbers, dots, underscores, dashes, "
 "slashes or tildes."
 msgstr ""
+"Deze waarde mag alleen letters, cijfers, punten, underscores, streepjes, "
+"schuine strepen of tildes bevatten."
 
 #: apps/dashboard/pages/views.py:37
 msgid "All pages"
@@ -3409,7 +3413,7 @@ msgstr ""
 #: apps/dashboard/ranges/views.py:210
 #, python-format
 msgid "There are more than one product with SKU %s"
-msgstr ""
+msgstr "Er is meer dan één product met SKU %s"
 
 #: apps/dashboard/reports/apps.py:11
 msgid "Reports dashboard"
@@ -3611,6 +3615,7 @@ msgstr "Korting waarde"
 #: apps/dashboard/vouchers/forms.py:43 apps/offer/abstract_models.py:118
 msgid "Exclusive offers cannot be combined on the same items"
 msgstr ""
+"Exclusieve aanbiedingen kunnen niet worden gecombineerd op dezelfde artikelen"
 
 #: apps/dashboard/vouchers/forms.py:57
 #, python-format
@@ -3632,7 +3637,7 @@ msgstr "Actief?"
 
 #: apps/dashboard/vouchers/forms.py:90
 msgid "In Voucherset?"
-msgstr ""
+msgstr "In Voucherset?"
 
 #: apps/dashboard/vouchers/views.py:35 apps/dashboard/vouchers/views.py:363
 #: apps/dashboard/vouchers/views.py:420
@@ -3678,11 +3683,11 @@ msgstr "Voucher verwijderd"
 
 #: apps/dashboard/vouchers/views.py:236
 msgid "Create voucher set"
-msgstr ""
+msgstr "Voucherset aanmaken"
 
 #: apps/dashboard/vouchers/views.py:276
 msgid "Voucher set created"
-msgstr ""
+msgstr "Voucherset aangemaakt"
 
 #: apps/dashboard/vouchers/views.py:432
 #: templates/oscar/dashboard/vouchers/voucher_set_detail.html:14
@@ -3690,7 +3695,7 @@ msgstr ""
 #: templates/oscar/dashboard/vouchers/voucher_set_form.html:15
 #: templates/oscar/dashboard/vouchers/voucher_set_list.html:22
 msgid "Voucher sets"
-msgstr ""
+msgstr "Voucher sets"
 
 #: apps/offer/abstract_models.py:87
 msgid "This is displayed within the customer's basket"
@@ -3724,13 +3729,15 @@ msgstr ""
 
 #: apps/offer/abstract_models.py:117
 msgid "Exclusive offer"
-msgstr ""
+msgstr "Exclusief aanbod"
 
 #: apps/offer/abstract_models.py:123
 msgid ""
 "Select other non-exclusive offers that this offer can be combined with on "
 "the same items"
 msgstr ""
+"Selecteer andere niet-exclusieve aanbiedingen waarmee deze aanbieding kan "
+"worden gecombineerd op dezelfde artikelen"
 
 #: apps/offer/abstract_models.py:138 apps/offer/abstract_models.py:716
 #: templates/oscar/dashboard/offers/offer_detail.html:74
@@ -3758,12 +3765,16 @@ msgid ""
 "Offers are active from the start date. Leave this empty if the offer has no "
 "start date."
 msgstr ""
+"Aanbiedingen zijn actief vanaf de begindatum. Laat dit leeg als de "
+"aanbieding geen begindatum heeft."
 
 #: apps/offer/abstract_models.py:161
 msgid ""
 "Offers are active until the end date. Leave this empty if the offer has no "
 "expiry date."
 msgstr ""
+"Aanbiedingen zijn actief tot de einddatum. Laat dit leeg als de aanbieding "
+"geen einddatum heeft."
 
 #: apps/offer/abstract_models.py:169
 msgid "Max global applications"
@@ -3949,7 +3960,7 @@ msgstr "Procentuele kortingen vereisen een product reeks"
 
 #: apps/offer/abstract_models.py:566 apps/offer/abstract_models.py:591
 msgid "Percentage discount benefits require a value"
-msgstr ""
+msgstr "Kortingspercentage motivaties moeten een waarde hebben"
 
 #: apps/offer/abstract_models.py:568 apps/offer/abstract_models.py:593
 msgid "Percentage discount cannot be greater than 100"
@@ -4333,24 +4344,25 @@ msgstr "Bestelling notities"
 
 #: apps/order/abstract_models.py:419 apps/order/abstract_models.py:429
 msgid "Order Status Changes"
-msgstr ""
+msgstr "Bestelstatus veranderingen"
 
 #: apps/order/abstract_models.py:421
 msgid "Old Status"
-msgstr ""
+msgstr "Oude status"
 
 #: apps/order/abstract_models.py:422
 msgid "New Status"
-msgstr ""
+msgstr "Nieuwe status"
 
 #: apps/order/abstract_models.py:428
 msgid "Order Status Change"
-msgstr ""
+msgstr "Bestelstatus verandering"
 
 #: apps/order/abstract_models.py:433
 #, python-format
 msgid "%(order)s has changed status from %(old_status)s to %(new_status)s"
 msgstr ""
+"de status van %(order)s is gewijzigd van %(old_status)s naar %(new_status)s"
 
 #: apps/order/abstract_models.py:450 apps/order/abstract_models.py:907
 #: apps/order/abstract_models.py:974
@@ -4607,23 +4619,23 @@ msgstr "Korting van %(amount)r op bestelling %(order)s"
 #: templates/oscar/basket/partials/basket_totals.html:164
 #: templates/oscar/order/partials/basket_totals.html:95
 msgid "Surcharges"
-msgstr ""
+msgstr "Toeslagen"
 
 #: apps/order/abstract_models.py:1175
 msgid "Surcharge"
-msgstr ""
+msgstr "Toeslag"
 
 #: apps/order/abstract_models.py:1179
 msgid "Surcharge code"
-msgstr ""
+msgstr "Toeslag code"
 
 #: apps/order/abstract_models.py:1183
 msgid "Surcharge (inc. tax)"
-msgstr ""
+msgstr "Toeslag (incl. BTW)"
 
 #: apps/order/abstract_models.py:1187
 msgid "Surcharge (excl. tax)"
-msgstr ""
+msgstr "Toeslag (excl. BTW)"
 
 #: apps/order/processing.py:83 apps/order/processing.py:95
 #, python-format
@@ -5095,15 +5107,15 @@ msgstr "Aantal vouchers"
 
 #: apps/voucher/abstract_models.py:34
 msgid "Length of Code"
-msgstr ""
+msgstr "Lengte van de code"
 
 #: apps/voucher/abstract_models.py:50
 msgid "VoucherSet"
-msgstr ""
+msgstr "Voucher set"
 
 #: apps/voucher/abstract_models.py:51
 msgid "VoucherSets"
-msgstr ""
+msgstr "Voucher sets"
 
 #: apps/voucher/abstract_models.py:123
 msgid ""
@@ -5171,7 +5183,7 @@ msgstr "Deze voucher is al een keer gebruikt voor een eerdere bestelling"
 
 #: apps/voucher/abstract_models.py:234
 msgid "This voucher is not available for this basket"
-msgstr ""
+msgstr "Deze voucher is niet van toepassing op dit winkelmandje"
 
 #: apps/voucher/abstract_models.py:304
 msgid "Voucher Application"
@@ -5303,7 +5315,7 @@ msgstr "Voorraad meldingen"
 
 #: defaults.py:179
 msgid "Voucher Sets"
-msgstr ""
+msgstr "Voucher sets"
 
 #: defaults.py:186
 msgid "Content"
@@ -5481,6 +5493,9 @@ msgid ""
 "        Your basket total is now <strong>%(total)s</strong>\n"
 "        "
 msgstr ""
+"\n"
+"        Uw winkelwagen totaal is nu <strong>%(total)s</strong>\n"
+"        "
 
 #: templates/oscar/basket/messages/new_total.html:20
 #: templates/oscar/basket/partials/basket_quick.html:38
@@ -5857,7 +5872,7 @@ msgstr "Wijzig dit product"
 
 #: templates/oscar/catalogue/detail.html:87
 msgid "Variants:"
-msgstr ""
+msgstr "Varianten:"
 
 #: templates/oscar/catalogue/detail.html:104
 msgid "Product Description"
@@ -5962,6 +5977,8 @@ msgid ""
 "                                        Add to '%(name)s' wish list\n"
 "                                    "
 msgstr ""
+"\n"
+"Voeg ‘%(name)s’ toe aan verlanglijst"
 
 #: templates/oscar/catalogue/partials/add_to_wishlist.html:26
 msgid "Create a new wishlist"
@@ -5975,6 +5992,9 @@ msgid ""
 "\"%(url)s\">'%(name)s'</a> wishlist.</span>\n"
 "                "
 msgstr ""
+"\n"
+"<span class=“float-left\">Product <a href=\"%(url)s\">’%(name)s’</a> staat "
+"in uw verlanglijst.</span>"
 
 #: templates/oscar/catalogue/partials/add_to_wishlist.html:45
 #: templates/oscar/customer/wishlists/wishlists_delete_product.html:34
@@ -5988,11 +6008,11 @@ msgstr "Log in om producten aan een verlanglijst toe te voegen."
 
 #: templates/oscar/catalogue/partials/gallery.html:22
 msgid "Previous"
-msgstr ""
+msgstr "Vorige"
 
 #: templates/oscar/catalogue/partials/gallery.html:26
 msgid "Next"
-msgstr ""
+msgstr "Volgende"
 
 #: templates/oscar/catalogue/partials/review.html:23
 #, python-format
@@ -6678,6 +6698,11 @@ msgid ""
 "            %(url)s\n"
 "        "
 msgstr ""
+"\n"
+"            We zijn blij om u te informeren dat ons product '%(title)s' weer "
+"op voorraad is:\n"
+"            %(url)s\n"
+"        "
 
 #: templates/oscar/communication/emails/commtype_product_alert_body.html:24
 msgid ""
@@ -6709,6 +6734,10 @@ msgid ""
 "We are happy to inform you that our product '%(title)s' is back in stock:\n"
 "%(url)s\n"
 msgstr ""
+"\n"
+"We zijn blij om u te informeren dat ons product '%(title)s' weer op voorraad "
+"is:\n"
+"%(url)s\n"
 
 #: templates/oscar/communication/emails/commtype_product_alert_body.txt:6
 msgid ""
@@ -7038,12 +7067,12 @@ msgstr "Bestelgeschiedenis"
 #: templates/oscar/customer/order/order_detail.html:149
 msgctxt "Buy again"
 msgid "Re-ordering..."
-msgstr ""
+msgstr "Opnieuw bestellen…"
 
 #: templates/oscar/customer/order/order_detail.html:64
 msgctxt "Buy again"
 msgid "Re-order"
-msgstr ""
+msgstr "Opnieuw bestellen"
 
 #: templates/oscar/customer/order/order_detail.html:67
 #: templates/oscar/customer/wishlists/wishlists_detail.html:59
@@ -7078,7 +7107,7 @@ msgstr "Verzending totaal"
 #: templates/oscar/customer/order/order_detail.html:149
 msgctxt "Buy again"
 msgid "Re-order all items"
-msgstr ""
+msgstr "Alle artikelen opnieuw bestellen"
 
 #: templates/oscar/customer/order/order_detail.html:165
 msgid "Contact Number"
@@ -7280,6 +7309,8 @@ msgid ""
 "Please make sure all Product Attributes are assigned to another Attribute "
 "Option Group before deletion."
 msgstr ""
+"Zorg ervoor dat alle productattributen zijn toegewezen aan een andere "
+"Attribute Option Group voordat u ze verwijdert."
 
 #: templates/oscar/dashboard/catalogue/attribute_option_group_delete.html:45
 msgid "Delete Attribute Option Group"
@@ -7315,15 +7346,15 @@ msgstr "Attribuut optiegroepen"
 
 #: templates/oscar/dashboard/catalogue/attribute_option_group_list.html:21
 msgid "Create new Attribute Option Group"
-msgstr ""
+msgstr "Maak een nieuwe Attribuut Optie Groep"
 
 #: templates/oscar/dashboard/catalogue/attribute_option_group_list.html:36
 msgid "No Attribute Option Groups found."
-msgstr ""
+msgstr "Geen Attribuut Optie Groepen gevonden."
 
 #: templates/oscar/dashboard/catalogue/attribute_option_group_row_actions.html:10
 msgid "Edit Attribute Option Group"
-msgstr ""
+msgstr "Attribuut Optiegroep bewerken"
 
 #: templates/oscar/dashboard/catalogue/category_delete.html:15
 #: templates/oscar/dashboard/catalogue/category_delete.html:21
@@ -7348,14 +7379,14 @@ msgstr ""
 #: templates/oscar/dashboard/catalogue/category_form.html:43
 #: templates/oscar/dashboard/catalogue/category_form.html:62
 msgid "Category details"
-msgstr ""
+msgstr "Categorie informatie"
 
 #: templates/oscar/dashboard/catalogue/category_form.html:48
 #: templates/oscar/dashboard/catalogue/category_form.html:82
 #: templates/oscar/dashboard/catalogue/product_update.html:117
 #: templates/oscar/dashboard/catalogue/product_update.html:349
 msgid "Search engine optimisation"
-msgstr ""
+msgstr "Zoekmachine optimalisatie"
 
 #: templates/oscar/dashboard/catalogue/category_form.html:108
 #: templates/oscar/dashboard/catalogue/product_update.html:381
@@ -7473,42 +7504,44 @@ msgstr "Bekijk op website"
 
 #: templates/oscar/dashboard/catalogue/option_delete.html:5
 msgid "Create Option"
-msgstr ""
+msgstr "Optie aanmaken"
 
 #: templates/oscar/dashboard/catalogue/option_delete.html:28
 msgid "Delete Option?"
-msgstr ""
+msgstr "Optie verwijderen?"
 
 #: templates/oscar/dashboard/catalogue/option_delete.html:40
 msgid ""
 "Please make sure option is not assigned to Products or Product Classes "
 "before deletion."
 msgstr ""
+"Zorg ervoor dat de optie niet is toegewezen aan producten of producttypes "
+"voordat u deze verwijdert."
 
 #: templates/oscar/dashboard/catalogue/option_delete.html:43
 msgid "Delete Option"
-msgstr ""
+msgstr "Verwijder Optie"
 
 #: templates/oscar/dashboard/catalogue/option_delete.html:54
 #, python-format
 msgid "Delete Option <strong>%(name)s</strong> - are you sure?"
-msgstr ""
+msgstr "Verwijder Optie <strong>%(name)s</strong> - weet u het zeker?"
 
 #: templates/oscar/dashboard/catalogue/option_form.html:50
 msgid "Option details"
-msgstr ""
+msgstr "Optie details"
 
 #: templates/oscar/dashboard/catalogue/option_list.html:20
 msgid "Create new Option"
-msgstr ""
+msgstr "Optie aanmaken"
 
 #: templates/oscar/dashboard/catalogue/option_list.html:34
 msgid "No Option found."
-msgstr ""
+msgstr "Optie niet gevonden."
 
 #: templates/oscar/dashboard/catalogue/option_row_actions.html:10
 msgid "Edit Option"
-msgstr ""
+msgstr "Optie bewerken"
 
 #: templates/oscar/dashboard/catalogue/product_class_delete.html:11
 msgid "Delete product type?"
@@ -7659,6 +7692,8 @@ msgid ""
 "Drag images to re-order them. Space for additional images will appear when "
 "images are added."
 msgstr ""
+"Sleep afbeeldingen om ze te herschikken. Ruimte voor extra afbeeldingen zal "
+"verschijnen wanneer afbeeldingen worden toegevoegd."
 
 #: templates/oscar/dashboard/catalogue/product_update.html:226
 msgid "SKU"
@@ -7691,7 +7726,7 @@ msgstr "Varianten op dit product kunnen momenteel niet worden aangemaakt."
 
 #: templates/oscar/dashboard/catalogue/product_update.html:313
 msgid "Please save the product before trying to add variants."
-msgstr ""
+msgstr "Sla het product op voordat u varianten probeert toe te voegen."
 
 #: templates/oscar/dashboard/catalogue/product_update.html:315
 msgid "This is likely because this product still has stock records."
@@ -7875,7 +7910,7 @@ msgstr "<em>Gesloten</em> voorraadmeldingen"
 
 #: templates/oscar/dashboard/index.html:163
 msgid "Offers, vouchers"
-msgstr ""
+msgstr "Aanbiedingen, vouchers"
 
 #: templates/oscar/dashboard/index.html:165
 msgid "Active <em>Site</em> Offers"
@@ -7902,10 +7937,12 @@ msgid ""
 "Please enter a correct username and password. Note that both fields may be "
 "case-sensitive."
 msgstr ""
+"Vul een correcte gebruikersnaam en wachtwoord in. Let op: beide velden "
+"kunnen hoofdlettergevoelig zijn."
 
 #: templates/oscar/dashboard/login.html:33
 msgid "Login"
-msgstr ""
+msgstr "Inloggen"
 
 #: templates/oscar/dashboard/offers/benefit_form.html:14
 msgid "Build a new incentive"
@@ -7920,6 +7957,10 @@ msgid ""
 "\"%(range_list_url)s\" target=\"_blank\">range dashboard</a>.\n"
 "        "
 msgstr ""
+"\n"
+"        Ranges kunnen worden aangemaakt en bewerkt vanuit het <a href="
+"\"%(range_list_url)s\" target=\"_blank\">range dashboard</a>.\n"
+"        "
 
 #: templates/oscar/dashboard/offers/benefit_form.html:28
 #: templates/oscar/dashboard/offers/condition_form.html:31
@@ -8207,10 +8248,9 @@ msgid "Price inc tax (before discounts)"
 msgstr "Prijs incl. btw (voor de korting)"
 
 #: templates/oscar/dashboard/orders/order_detail.html:261
-#, fuzzy, python-format
-#| msgid "Dear %(name)s,"
+#, python-format
 msgid "Surcharge %(name)s"
-msgstr "Beste %(name)s,"
+msgstr "Toeslag %(name)s,"
 
 #: templates/oscar/dashboard/orders/order_detail.html:289
 msgid "With selected lines"
@@ -8272,19 +8312,19 @@ msgstr "De status van deze bestelling kan niet worden gewijzigd."
 
 #: templates/oscar/dashboard/orders/order_detail.html:376
 msgid "Status Changes"
-msgstr ""
+msgstr "Statuswijzigingen"
 
 #: templates/oscar/dashboard/orders/order_detail.html:383
 msgid "From"
-msgstr ""
+msgstr "Vanaf"
 
 #: templates/oscar/dashboard/orders/order_detail.html:384
 msgid "To"
-msgstr ""
+msgstr "Tot"
 
 #: templates/oscar/dashboard/orders/order_detail.html:400
 msgid "No status changes."
-msgstr ""
+msgstr "Geen statuswijzigingen."
 
 #: templates/oscar/dashboard/orders/order_detail.html:432
 #, python-format
@@ -8494,6 +8534,9 @@ msgid ""
 "                        Page %(page_num)s of %(total_pages)s\n"
 "                    "
 msgstr ""
+"\n"
+"                        Pagina %(page_num)s van %(total_pages)s\n"
+"                    "
 
 #: templates/oscar/dashboard/partials/pagination.html:24
 #: templates/oscar/partials/pagination.html:24
@@ -8504,7 +8547,7 @@ msgstr "volgende"
 #: templates/oscar/dashboard/ranges/range_product_list.html:114
 msgctxt "Change the sequence order"
 msgid "Re-order"
-msgstr ""
+msgstr "Opnieuw bestellen"
 
 #: templates/oscar/dashboard/partners/messages/user_unlinked.html:2
 #, python-format
@@ -8882,7 +8925,7 @@ msgstr "Beoordeling #%(review.id)s"
 #: templates/oscar/dashboard/reviews/review_update.html:22
 #, python-format
 msgid "Review #%(review_id)s"
-msgstr ""
+msgstr "Review #%(review_id)s"
 
 #: templates/oscar/dashboard/reviews/review_update.html:29
 msgid "Review information"
@@ -9238,63 +9281,63 @@ msgstr "Geen vouchers gevonden"
 
 #: templates/oscar/dashboard/vouchers/voucher_set_detail.html:24
 msgid "Update voucher set"
-msgstr ""
+msgstr "Voucherset bijwerken"
 
 #: templates/oscar/dashboard/vouchers/voucher_set_detail.html:27
 msgid "Download CSV"
-msgstr ""
+msgstr "CSV downloaden"
 
 #: templates/oscar/dashboard/vouchers/voucher_set_detail.html:30
 #: templates/oscar/dashboard/vouchers/voucher_set_detail.html:39
 msgid "Voucher set"
-msgstr ""
+msgstr "Voucher set"
 
 #: templates/oscar/dashboard/vouchers/voucher_set_detail.html:48
 msgid "Start"
-msgstr ""
+msgstr "Begin"
 
 #: templates/oscar/dashboard/vouchers/voucher_set_detail.html:52
 msgid "End"
-msgstr ""
+msgstr "Einde"
 
 #: templates/oscar/dashboard/vouchers/voucher_set_detail.html:64
 msgid "Created"
-msgstr ""
+msgstr "Aangemaakt"
 
 #: templates/oscar/dashboard/vouchers/voucher_set_list.html:21
 msgid "Create new voucher set"
-msgstr ""
+msgstr "Nieuwe Voucherset aanmaken"
 
 #: templates/oscar/dashboard/vouchers/voucher_set_list.html:36
 msgid "Num"
-msgstr ""
+msgstr "Num"
 
 #: templates/oscar/dashboard/widgets/popup_response.html:3
 msgid "Popup closing..."
-msgstr ""
+msgstr "Popup sluit..."
 
 #: templates/oscar/dashboard/widgets/related_multiple_widget_wrapper.html:9
 #: templates/oscar/dashboard/widgets/related_widget_wrapper.html:8
 #, python-format
 msgid "Change selected %(model)s"
-msgstr ""
+msgstr "Wijzig geselecteerd %(model)s"
 
 #: templates/oscar/dashboard/widgets/related_multiple_widget_wrapper.html:14
 #: templates/oscar/dashboard/widgets/related_widget_wrapper.html:18
 #, python-format
 msgid "Delete selected %(model)s"
-msgstr ""
+msgstr "Verwijder geselecteerd %(model)s"
 
 #: templates/oscar/dashboard/widgets/related_multiple_widget_wrapper.html:20
 #: templates/oscar/dashboard/widgets/related_widget_wrapper.html:13
 #, python-format
 msgid "Add another %(model)s"
-msgstr ""
+msgstr "Voeg nog een %(model)s toe"
 
 #: templates/oscar/dashboard/widgets/related_multiple_widget_wrapper.html:21
 #: templates/oscar/dashboard/widgets/related_widget_wrapper.html:14
 msgid "Add"
-msgstr ""
+msgstr "Toevoegen"
 
 #: templates/oscar/error.html:9
 msgid "Sorry!"
@@ -9369,6 +9412,8 @@ msgid ""
 "                        Total: %(total)s\n"
 "                    "
 msgstr ""
+"\n"
+"Totaal: %(total)s"
 
 #: templates/oscar/partials/nav_primary.html:37
 msgid "Browse store"
@@ -9514,7 +9559,13 @@ msgid_plural ""
 "                    Found <strong>%(num_results)s</strong> results.\n"
 "                "
 msgstr[0] ""
+"\n"
+"                    <strong>%(num_results)s</strong> resultaat.\n"
+"                "
 msgstr[1] ""
+"\n"
+"                    <strong>%(num_results)s</strong> resultaten.\n"
+"                "
 
 #: templates/oscar/search/results.html:69
 msgid "Found <strong>0</strong> results."
