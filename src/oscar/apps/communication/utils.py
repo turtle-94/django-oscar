@@ -156,17 +156,18 @@ class Dispatcher(object):
 
         return content_attachments, file_attachments
 
-    def get_base_context(self):
+    def get_base_context(self, request=None):
         """
         Return context that is common to all emails
         """
-        return {'site': Site.objects.get_current()}
+        return {'site': Site.objects.get_current(request)}
 
     def get_messages(self, event_code, extra_context=None):
         """
         Return rendered messages
         """
-        context = self.get_base_context()
+        request = extra_context.get("request")
+        context = self.get_base_context(request=request)
         if extra_context is not None:
             context.update(extra_context)
         msgs = CommunicationEventType.objects.get_and_render(event_code, context)
